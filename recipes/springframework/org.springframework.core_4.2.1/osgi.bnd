@@ -1,0 +1,16 @@
+package-version=${version;===;${Bundle-Version}}
+commons-codec-version=${version;===;1.10}
+commons-logging-version=${version;===;1.2}
+log4j-version=${version;===;1.2.17}
+jopt-simple-version=${version;===;4.9}
+aspectjweaver-version=${version;===;1.8.6}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *.internal*;x-internal:=true;version="${package-version}", \
+ *.impl*;x-internal:=true;version="${package-version}", \
+ *;version="${package-version}"
+
+Import-Package: \
+ *;resolution:=optional
+

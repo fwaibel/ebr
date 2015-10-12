@@ -1,0 +1,16 @@
+package-version=${version;===;${Bundle-Version}}
+javax.el-api-version=${version;===;2.2.5}
+javax.inject-version=${version;===;1}
+groovy-all-version=${version;===;2.4.4}
+spring-core-version=${version;===;4.2.1.RELEASE}
+snakeyaml-version=${version;===;1.15}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *.internal*;x-internal:=true;version="${package-version}", \
+ *.impl*;x-internal:=true;version="${package-version}", \
+ *;version="${package-version}"
+
+Import-Package: \
+ *;resolution:=optional
+

@@ -1,0 +1,20 @@
+package-version=${version;===;${Bundle-Version}}
+aopalliance-version=${version;===;1.0}
+uow-version=${version;===;6.0.2.17}
+ejb-api-version=${version;===;3.0}
+connector-api-version=${version;===;1.5}
+javax.transaction-api-version=${version;===;1.2}
+spring-aop-version=${version;===;4.2.1.RELEASE}
+spring-beans-version=${version;===;4.2.1.RELEASE}
+spring-context-version=${version;===;4.2.1.RELEASE}
+spring-core-version=${version;===;4.2.1.RELEASE}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *.internal*;x-internal:=true;version="${package-version}", \
+ *.impl*;x-internal:=true;version="${package-version}", \
+ *;version="${package-version}"
+
+Import-Package: \
+ *;resolution:=optional
+

@@ -1,0 +1,26 @@
+package-version=${version;===;${Bundle-Version}}
+guava-version=${version;===;18.0}
+itext-version=${version;===;2.1.7}
+cache-api-version=${version;===;1.0.0}
+javax.mail-api-version=${version;===;1.5.4}
+ehcache-version=${version;===;2.10.0}
+jasperreports-version=${version;===;6.1.0}
+velocity-version=${version;===;1.7}
+commonj-version=${version;===;1.1.0}
+freemarker-version=${version;===;2.3.23}
+quartz-version=${version;===;2.2.1}
+spring-beans-version=${version;===;4.2.1.RELEASE}
+spring-context-version=${version;===;4.2.1.RELEASE}
+spring-core-version=${version;===;4.2.1.RELEASE}
+spring-jdbc-version=${version;===;4.2.1.RELEASE}
+spring-tx-version=${version;===;4.2.1.RELEASE}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *.internal*;x-internal:=true;version="${package-version}", \
+ *.impl*;x-internal:=true;version="${package-version}", \
+ *;version="${package-version}"
+
+Import-Package: \
+ *;resolution:=optional
+
