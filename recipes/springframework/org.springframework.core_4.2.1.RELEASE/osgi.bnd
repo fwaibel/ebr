@@ -1,0 +1,32 @@
+package-version=${version;===;${Bundle-Version}}
+commons-codec-version=${version;===;1.10}
+commons-logging-version=${version;===;1.2}
+log4j-version=${version;===;1.2.17}
+jopt-simple-version=${version;===;4.9}
+aspectjweaver-version=${version;===;1.8.6}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *;version="${package-version}"
+
+Import-Package: \
+ org.springframework.asm.util;resolution:="optional", \
+ joptsimple;version=${jopt-simple-version};resolution:="optional", \
+ javax.xml.namespace;version="0";resolution:="optional", \
+ javax.xml.stream;version="0";resolution:="optional", \
+ javax.xml.stream.events;version="0", \
+ javax.xml.stream.util;version="0", \
+ javax.xml.transform;version="0";resolution:="optional", \
+ javax.xml.transform.sax;version="0", \
+ javax.xml.transform.stax;version="0", \
+ org.apache.commons.logging;version=${commons-logging-version};resolution:="optional", \
+ org.apache.commons.codec;version=${commons-codec-version};resolution:="optional", \
+ org.apache.log4j.*;version=${log4j-version};resolution:="optional", \
+ org.apache.tools.ant.*;resolution:="optional", \
+ org.aspectj.*;version=${aspectjweaver-version};resolution:="optional", \
+ sun.misc;resolution:="optional", \
+ org.w3c.dom;version="0";resolution:="optional", \
+ org.xml.sax;version="0";resolution:="optional", \
+ org.xml.sax.ext;version="0";resolution:="optional", \
+ org.xml.sax.helpers;version="0";resolution:="optional", \
+ *

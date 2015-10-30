@@ -1,0 +1,17 @@
+package-version=${version;===;${Bundle-Version}}
+spring-context-version=${version;===;4.2.1.RELEASE}
+spring-messaging-version=${version;===;4.2.1.RELEASE}
+spring-core-version=${version;===;4.2.1.RELEASE}
+jackson-mapper-asl-version=${version;===;1.9.13}
+jackson-core-version=${version;===;2.3.2}
+jackson-core-asl-version=${version;===;1.9.13}
+jackson-databind-version=${version;===;2.3.2}
+spring-oxm-version=${version;===;4.2.1.RELEASE}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *;version="${package-version}"
+
+Import-Package: \
+ *;resolution:=optional
+
