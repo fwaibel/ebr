@@ -16,9 +16,11 @@
   <name>Apache Commons</name>
 
   <modules>
+    <module>org.apache.commons.codec_1.10.0</module>
     <module>org.apache.commons.codec_1.9.0</module>
     <module>org.apache.commons.io_2.4.0</module>
     <module>org.apache.commons.fileupload_1.3.1</module>
+    <module>org.apache.commons.logging_1.2.0</module>
   </modules>
 
 </project>

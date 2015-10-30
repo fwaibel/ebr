@@ -6,4 +6,3 @@ Export-Package: \
 
 Import-Package: \
  *;resolution:=optional
-
