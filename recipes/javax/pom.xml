@@ -16,6 +16,8 @@
   <name>javax</name>
 
   <modules>
+    <module>javax.websocket_1.1.0</module>
+    <module>javax.portlet_2.0.0</module>
     <module>javax.annotation_1.2.0</module>
     <module>javax.servlet_3.1.0</module>
     <module>javax.ws.rs.ebr_2.0.1</module>
