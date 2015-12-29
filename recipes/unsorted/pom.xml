@@ -22,6 +22,7 @@
     <module>com.sun.jna.ebr_4.1.0</module>
     <module>com.sun.jna.platform.ebr_4.1.0</module>
 	<module>org.aopalliance.aop_1.0.0</module>
+    <module>ognl_3.1.2</module>
   </modules>
 
 </project>
