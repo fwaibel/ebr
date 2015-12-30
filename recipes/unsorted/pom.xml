@@ -23,6 +23,8 @@
     <module>com.sun.jna.platform.ebr_4.1.0</module>
 	<module>org.aopalliance.aop_1.0.0</module>
     <module>ognl_3.1.2</module>
+    <module>com.rometools.rome-utils_1.5.1</module>
+    <module>com.rometools.rome_1.5.1</module>
   </modules>
 
 </project>
