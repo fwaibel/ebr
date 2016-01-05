@@ -1,0 +1,14 @@
+Bundle-SymbolicName: org.aspectj.weaver
+Bundle-Name: AspectJ Weaver
+Bundle-Vendor: Eclipse Virgo
+Bundle-ManifestVersion: 2
+Bundle-Version: 1.8.7
+Import-Template: 
+ org.apache.commons.logging;version="[1.1.1, 2.0.0)";resolution:=optional
+Excluded-Imports: 
+ com.bea.jvm,
+ org.objectweb.asm
+Export-Template:
+ org.aspectj.*;version="1.8.7"
+Excluded-Exports:
+ aj.*
