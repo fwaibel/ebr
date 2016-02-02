@@ -23,6 +23,7 @@ Import-Package: \
  commonj.*;version=${commonj-version};resolution:="optional", \
  freemarker.*;version=${freemarker-version};resolution:="optional", \
  javax.cache.*;version=${cache-api-version};resolution:="optional", \
+ javax.activation;version="0";resolution:="optional", \
  javax.mail.*;version=${javax.mail-api-version};resolution:="optional", \
  net.sf.ehcache.*;version=${ehcache-version};resolution:="optional", \
  net.sf.jasperreports.*;version=${jasperreports-version};resolution:="optional", \
