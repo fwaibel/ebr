@@ -1,0 +1,30 @@
+import java.util.jar.JarEntry
+import java.util.jar.JarOutputStream
+import java.util.zip.ZipEntry
+import java.util.zip.ZipFile
+import java.util.zip.ZipOutputStream
+
+apply plugin: 'ivy-publish'
+
+buildscript {
+    repositories { mavenCentral() }
+    dependencies {
+        classpath 'org.apache.ivy:ivy:2.4.0'
+        classpath 'com.jcraft:jsch:0.1.53'
+    }
+}
+
+publishing {
+    publications {
+        aopAlliance(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'oevm.org.aopalliance'
+            revision "1.0.0"
+            artifact(file("build/oevm.org.aopalliance-1.0.0.jar"))
+        }
+    }
+
+    repositories {
+        ivy { url "$buildDir" }
+    }
+}

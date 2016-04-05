@@ -1,0 +1,29 @@
+plugins { id 'org.hidetake.ssh' version '1.1.4' }
+
+remotes {
+    eclipseDotOrg {
+        host = ECLIPSE_ORG_FTP_HOST
+        user =  ECLIPSE_ORG_FTP_USER
+        identity = file(System.properties['user.home'] + "/.ssh/${ECLIPSE_ORG_FTP_IDENTITY}")
+        knownHosts = file(System.properties['user.home'] + "/.ssh/known_hosts")
+    }
+}
+
+def groupId = 'org.eclipse.virgo.mirrored'
+def mirrorPath = ECLIPSE_ORG_FTP_MIRROR_PATH
+
+task uploadAopalliance << {
+    println "Uploading oevm.org.aopalliance-1.0.0 to ${remotes.eclipseDotOrg.host}..."
+    def allianceVersion = '1.0.0'
+    def alliancePath = "${groupId}/oevm.org.aopalliance/${allianceVersion}"
+    ssh.run {
+        session(remotes.eclipseDotOrg) {
+            execute "mkdir -p ${mirrorPath}/${alliancePath}"
+            put from: "${buildDir}/${alliancePath}/ivy-${allianceVersion}.xml", into: "${mirrorPath}/${alliancePath}"
+            put from: "${buildDir}/${alliancePath}/ivy-${allianceVersion}.xml.sha1", into: "${mirrorPath}/${alliancePath}"
+            put from: "${buildDir}/${alliancePath}/oevm.org.aopalliance-${allianceVersion}.jar", into: "${mirrorPath}/${alliancePath}"
+            put from: "${buildDir}/${alliancePath}/oevm.org.aopalliance-${allianceVersion}.jar.sha1", into: "${mirrorPath}/${alliancePath}"
+        }
+    }
+    println "done."
+}
