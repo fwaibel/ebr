@@ -1,0 +1,29 @@
+apply plugin: 'base'
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "http://build.eclipse.org/rt/virgo/maven/bundles/release" }
+        maven { url "http://repository.springsource.com/maven/bundles/external" }
+    }
+
+    configurations {
+        bundlorRuntime
+
+        sourceBundle
+    }
+
+    dependencies {
+        bundlorRuntime('org.eclipse.virgo.bundlor:org.eclipse.virgo.bundlor.commandline:1.1.2.RELEASE')
+        bundlorRuntime('org.eclipse.virgo.bundlor:org.eclipse.virgo.bundlor:1.1.2.RELEASE')
+        bundlorRuntime('org.eclipse.virgo.bundlor:org.eclipse.virgo.bundlor.blint:1.1.2.RELEASE')
+    }
+
+    task createBuildDir() {
+        doLast() {
+            file(project.buildDir).mkdir()
+        }
+    }
+}
+
+task wrapper(type: Wrapper) { gradleVersion = '2.10' }

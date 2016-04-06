@@ -1,4 +1,0 @@
-Bundle-SymbolicName: oevm.org.aopalliance.mf
-Bundle-Name: AOP Alliance API
-Bundle-Vendor: Eclipse Virgo
-Bundle-ManifestVersion: 2

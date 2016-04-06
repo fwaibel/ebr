@@ -1,0 +1,17 @@
+dependencies {
+    sourceBundle group: 'aopalliance', name: 'aopalliance', version: '1.0'
+}
+
+task bundlor(type: JavaExec, dependsOn: createBuildDir) {
+
+    classpath = configurations.bundlorRuntime
+
+    def artifactName = project.name.split('-')[0]
+    def artifactVersion = project.name.split('-')[1]
+
+    main = 'org.eclipse.virgo.bundlor.commandline.Bundlor'
+    args '-D', "version=${artifactVersion}"
+    args '-i', configurations.sourceBundle[0]
+    args '-m', "${artifactName}.mf"
+    args '-o', new File(file(project.buildDir), "${project.name}.jar")
+}
