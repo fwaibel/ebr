@@ -1,6 +1,23 @@
+import java.util.jar.JarEntry
+import java.util.jar.JarOutputStream
+import java.util.zip.ZipEntry
+import java.util.zip.ZipFile
+import java.util.zip.ZipOutputStream
+
+buildscript {
+    repositories { mavenCentral() }
+    dependencies {
+        classpath 'org.apache.ivy:ivy:2.4.0'
+        classpath 'com.jcraft:jsch:0.1.53'
+    }
+}
+
+plugins { id 'org.hidetake.ssh' version '1.1.4' }
+
 configure(subprojects.findAll {it.name.contains('-') && !it.name.contains('SpringSource-EBR-templates')}) {
 
     apply plugin: 'base'
+    apply plugin: 'ivy-publish'
 
     repositories {
         mavenCentral()
@@ -26,19 +43,63 @@ configure(subprojects.findAll {it.name.contains('-') && !it.name.contains('Sprin
         }
     }
 
+    def artifactName = project.name.split('-')[0]
+    def artifactVersion = project.name.split('-')[1]
+
+    def outputFile = new File(file(project.buildDir), "${project.name}.jar")
+
     task bundlor(type: JavaExec, dependsOn: createBuildDir) {
 
         classpath = configurations.bundlorRuntime
-
-        def artifactName = project.name.split('-')[0]
-        def artifactVersion = project.name.split('-')[1]
 
         main = 'org.eclipse.virgo.bundlor.commandline.Bundlor'
         args '-D', "version=${artifactVersion}"
         args '-i', "${->configurations.sourceBundle[0]}" // lazy GString to resolve the configuration at runtime
         args '-m', "${artifactName}.mf"
-        args '-o', new File(file(project.buildDir), "${project.name}.jar")
+        args '-o', outputFile
     }
+
+    publishing {
+        publications {
+            bundledArtifact(IvyPublication) {
+                organisation 'org.eclipse.virgo.mirrored'
+                module "${artifactName}"
+                revision "${artifactVersion}"
+                artifact(outputFile)
+            }
+        }
+
+        repositories { ivy { url "$buildDir" } }
+    }
+    publish.dependsOn bundlor
+
+    remotes {
+        eclipseDotOrg {
+            host = ECLIPSE_ORG_FTP_HOST
+            user =  ECLIPSE_ORG_FTP_USER
+            identity = file(System.properties['user.home'] + "/.ssh/${ECLIPSE_ORG_FTP_IDENTITY}")
+            knownHosts = file(System.properties['user.home'] + "/.ssh/known_hosts")
+        }
+    }
+
+    def groupId = 'org.eclipse.virgo.mirrored'
+    def mirrorPath = ECLIPSE_ORG_FTP_MIRROR_PATH
+
+    task upload << {
+        println "Uploading ${project.name} to ${remotes.eclipseDotOrg.host}..."
+        def artifactPath = "${groupId}/${artifactName}/${artifactVersion}"
+        ssh.run {
+            session(remotes.eclipseDotOrg) {
+                execute "mkdir -p ${mirrorPath}/${artifactPath}"
+                put from: "${buildDir}/${artifactPath}/ivy-${artifactVersion}.xml", into: "${mirrorPath}/${artifactPath}"
+                put from: "${buildDir}/${artifactPath}/ivy-${artifactVersion}.xml.sha1", into: "${mirrorPath}/${artifactPath}"
+                put from: "${buildDir}/${artifactPath}/${artifactName}-${artifactVersion}.jar", into: "${mirrorPath}/${artifactPath}"
+                put from: "${buildDir}/${artifactPath}/${artifactName}-${artifactVersion}.jar.sha1", into: "${mirrorPath}/${artifactPath}"
+            }
+        }
+        println "done."
+    }
+    upload.dependsOn publish
 }
 
 task wrapper(type: Wrapper) { gradleVersion = '2.10' }
