@@ -1,2 +1,3 @@
 
 include ':org.aopalliance:oevm.org.aopalliance-1.0.0'
+include ':org.aspectj:oevm.org.aspectj.aspectjweaver-1.7.2'

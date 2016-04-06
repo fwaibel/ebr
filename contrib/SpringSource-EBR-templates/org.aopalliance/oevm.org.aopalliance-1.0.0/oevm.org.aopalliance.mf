@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-SymbolicName: oevm.org.aopalliance
 Bundle-Name: AOP Alliance API
 Bundle-Vendor: Eclipse Virgo
+Bundle-Version: ${version}
 Bundle-ManifestVersion: 2
 Bundle-Classpath: .
 Export-Template: org.aopalliance.aop.*;version="${version}"
-Bundle-Version: ${version}

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: oevm.org.aspectj.weaver
+Bundle-Name: AspectJ Weaver
+Bundle-Vendor: Eclipse Virgo
+Bundle-Version: ${version}
+Bundle-ManifestVersion: 2
+Import-Template: 
+ org.apache.commons.logging;version="[1.1.1, 2.0.0)";resolution:=optional,
+ javax.xml.parsers;version="0",
+ org.xml.sax;version="0",
+ org.xml.sax.helpers;version="0"
+Excluded-Imports: 
+ com.bea.jvm,
+ org.objectweb.asm
+Export-Template:
+ org.aspectj.*;version="${version}",
+ aj.*;version="${version}"
+Implementation-Title: org.aspectj.weaver
+Implementation-Version: ${version}
+Specification-Vendor: aspectj.org
+Premain-Class: org.aspectj.weaver.loadtime.Agent
+Implementation-Vendor: aspectj.org
+Name: org/aspectj/weaver/
+Specification-Title: AspectJ Weaver Classes
+Specification-Version: ${version}
+Can-Redefine-Classes: true
