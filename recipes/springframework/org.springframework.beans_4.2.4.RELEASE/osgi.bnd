@@ -1,0 +1,24 @@
+package-version=${version;===;${Bundle-Version}}
+javax.el-api-version=${version;===;2.2.5}
+javax.inject-version=${version;===;1}
+groovy-all-version=${version;===;2.4.4}
+spring-core-version=${version;===;4.2.4.RELEASE}
+snakeyaml-version=${version;===;1.15}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *;version="${package-version}"
+
+Import-Package: \
+ javax.el.*;version=${javax.el-api-version};resolution:="optional", \
+ javax.inject.*;version=${javax.inject-version};resolution:="optional", \
+ groovy.*;resolution:="optional", \
+ org.yaml.snakeyaml*;resolution:="optional", \
+ org.codehaus.groovy.*;resolution:="optional", \
+ org.springframework.cglib.*;version=${spring-core-version}, \
+ org.springframework.core.*;version=${spring-core-version}, \
+ org.springframework.util.*;version=${spring-core-version}, \
+ javax.xml.parsers;version="0";resolution:="optional", \
+ org.w3c.dom;version="0";resolution:="optional", \
+ org.xml.sax;version="0";resolution:="optional", \
+ *

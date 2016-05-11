@@ -1,0 +1,42 @@
+package-version=${version;===;${Bundle-Version}}
+guava-version=${version;===;18.0}
+itext-version=${version;===;2.1.7}
+cache-api-version=${version;===;1.0.0}
+javax.mail-api-version=${version;===;1.5.4}
+ehcache-version=${version;===;2.10.0}
+jasperreports-version=${version;===;6.1.0}
+velocity-version=${version;===;1.7}
+commonj-version=${version;===;1.1.0}
+freemarker-version=${version;===;2.3.23}
+quartz-version=${version;===;2.2.1}
+spring-beans-version=${version;===;4.2.4.RELEASE}
+spring-context-version=${version;===;4.2.4.RELEASE}
+spring-core-version=${version;===;4.2.4.RELEASE}
+spring-jdbc-version=${version;===;4.2.4.RELEASE}
+spring-tx-version=${version;===;4.2.4.RELEASE}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *;version="${package-version}"
+
+Import-Package: \
+ commonj.*;version=${commonj-version};resolution:="optional", \
+ freemarker.*;version=${freemarker-version};resolution:="optional", \
+ javax.cache.*;version=${cache-api-version};resolution:="optional", \
+ javax.activation;version="0";resolution:="optional", \
+ javax.mail.*;version=${javax.mail-api-version};resolution:="optional", \
+ net.sf.ehcache.*;version=${ehcache-version};resolution:="optional", \
+ net.sf.jasperreports.*;version=${jasperreports-version};resolution:="optional", \
+ org.apache.velocity.*;version=${velocity-version};resolution:="optional", \
+ org.quartz.*;version=${quartz-version};resolution:="optional", \
+ org.springframework.beans.*;version=${spring-beans-version}, \
+ org.springframework.context.*;version=${spring-context-version}, \
+ org.springframework.core.*;version=${spring-core-version}, \
+ org.springframework.jdbc.*;version=${spring-jdbc-version};resolution:="optional", \
+ org.springframework.jndi.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.scheduling.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.transaction.*;version=${spring-tx-version};resolution:="optional", \
+ org.springframework.util.*;version=${spring-core-version}, \
+ javax.naming;version="0";resolution:="optional", \
+ javax.sql;version="0";resolution:="optional", \
+ *
