@@ -1,0 +1,35 @@
+package-version=${version;===;${Bundle-Version}}
+jackson-databind-version=${version;===;2.6.4}
+undertow-core-version=${version;===;1.3.10.Final}
+undertow-servlet-version=${version;===;1.3.10.Final}
+undertow-websockets-jsr-version=${version;===;1.3.10.Final}
+javax.servlet-api-version=${version;===;3.1.0}
+javax.websocket-api-version=${version;===;1.0}
+tomcat-websocket-version=${version;===;8.0.30}
+websocket-client-version=${version;===;9.3.6.v20151106}
+websocket-server-version=${version;===;9.3.6.v20151106}
+jetty-client-version=${version;===;9.3.6.v20151106}
+jetty-webapp-version=${version;===;9.3.6.v20151106}
+tyrus-container-servlet-version=${version;===;1.3.5}
+tyrus-core-version=${version;===;1.3.5}
+tyrus-server-version=${version;===;1.3.5}
+tyrus-spi-version=${version;===;1.3.5}
+spring-context-version=${version;===;4.2.4.RELEASE}
+spring-core-version=${version;===;4.2.4.RELEASE}
+spring-messaging-version=${version;===;4.2.4.RELEASE}
+spring-web-version=${version;===;4.2.4.RELEASE}
+spring-webmvc-version=${version;===;4.2.4.RELEASE}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *;version="${package-version}"
+
+Import-Package: \
+ com.fasterxml.jackson.*;version=${jackson-databind-version};resolution:="optional", \
+ io.undertow.*;version=${undertow-core-version};resolution:="optional", \
+ javax.servlet;version=${javax.servlet-api-version}, \
+ org.apache.tomcat.websocket.*;version=${tomcat-websocket-version};resolution:="optional", \
+ org.eclipse.jetty.*;version=${jetty-client-version};resolution:="optional", \
+ org.glassfish.tyrus.*;version=${tyrus-core-version};resolution:="optional", \
+ org.xnio.*;resolution:="optional", \
+ *

@@ -9,7 +9,7 @@ remotes {
     }
 }
 
-def version = '4.2.1.RELEASE'
+def version = '4.2.4.RELEASE'
 def groupId = 'org.eclipse.virgo.mirrored'
 def mirrorPath = ECLIPSE_ORG_FTP_MIRROR_PATH
 
