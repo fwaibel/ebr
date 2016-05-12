@@ -1,5 +1,13 @@
 bin/
 target/
+build/
+.settings/
+.project
+.classpath
+.gradle/
+*~
+*.rej
+*.bak
 *~
 *.rej
 *.bak
