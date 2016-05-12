@@ -16,31 +16,27 @@
   <name>Spring Framework</name>
 
   <modules>
-    <module>org.springframework.security.core_4.0.2.RELEASE</module>
-    <module>org.springframework.security.config_4.0.2.RELEASE</module>
-    <module>org.springframework.security.web_4.0.2.RELEASE</module>
-
     <module>org.springframework.amqp_1.5.1.RELEASE</module>
     <module>org.springframework.amqp.rabbitmq_1.5.1.RELEASE</module>
 
-    <module>org.springframework.aop_4.2.4.RELEASE</module>
-    <module>org.springframework.aspects_4.2.4.RELEASE</module>
-    <module>org.springframework.beans_4.2.4.RELEASE</module>
-    <module>org.springframework.context_4.2.4.RELEASE</module>
-    <module>org.springframework.context.support_4.2.4.RELEASE</module>
-    <module>org.springframework.core_4.2.4.RELEASE</module>
-    <module>org.springframework.expression_4.2.4.RELEASE</module>
-    <module>org.springframework.jdbc_4.2.4.RELEASE</module>
-    <module>org.springframework.jms_4.2.4.RELEASE</module>
-    <module>org.springframework.messaging_4.2.4.RELEASE</module>
-    <module>org.springframework.orm_4.2.4.RELEASE</module>
-    <module>org.springframework.oxm_4.2.4.RELEASE</module>
-    <module>org.springframework.test_4.2.4.RELEASE</module>
-    <module>org.springframework.transaction_4.2.4.RELEASE</module>
-    <module>org.springframework.web_4.2.4.RELEASE</module>     
-    <module>org.springframework.webmvc_4.2.4.RELEASE</module>
-    <module>org.springframework.webmvc.portlet_4.2.4.RELEASE</module>
-    <module>org.springframework.websocket_4.2.4.RELEASE</module>
+    <module>org.springframework.aop_4.2.1.RELEASE</module>
+    <module>org.springframework.aspects_4.2.1.RELEASE</module>
+    <module>org.springframework.beans_4.2.1.RELEASE</module>
+    <module>org.springframework.context_4.2.1.RELEASE</module>
+    <module>org.springframework.context.support_4.2.1.RELEASE</module>
+    <module>org.springframework.core_4.2.1.RELEASE</module>
+    <module>org.springframework.expression_4.2.1.RELEASE</module>
+    <module>org.springframework.jdbc_4.2.1.RELEASE</module>
+    <module>org.springframework.jms_4.2.1.RELEASE</module>
+    <module>org.springframework.messaging_4.2.1.RELEASE</module>
+    <module>org.springframework.orm_4.2.1.RELEASE</module>
+    <module>org.springframework.oxm_4.2.1.RELEASE</module>
+    <module>org.springframework.test_4.2.1.RELEASE</module>
+    <module>org.springframework.transaction_4.2.1.RELEASE</module>
+    <module>org.springframework.web_4.2.1.RELEASE</module>     
+    <module>org.springframework.webmvc_4.2.1.RELEASE</module>
+    <module>org.springframework.webmvc.portlet_4.2.1.RELEASE</module>
+    <module>org.springframework.websocket_4.2.1.RELEASE</module>
 
 <!--
     <module>org.springframework.aop_3.2.10.RELEASE</module>

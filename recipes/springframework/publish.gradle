@@ -1,0 +1,128 @@
+apply plugin: 'ivy-publish'
+
+buildscript {
+    repositories { mavenCentral() }
+    dependencies {
+        classpath 'org.apache.ivy:ivy:2.4.0'
+        classpath 'com.jcraft:jsch:0.1.53'
+    }
+}
+
+def version = '4.2.1.RELEASE'
+
+publishing {
+    publications {
+        aop(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.aop'
+            revision "${version}"
+            artifact(file("org.springframework.aop_${version}/target/org.springframework.aop-${version}.jar"))
+        }
+        aspects(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.aspects'
+            revision "${version}"
+            artifact(file("org.springframework.aspects_${version}/target/org.springframework.aspects-${version}.jar"))
+        }
+        beans(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.beans'
+            revision "${version}"
+            artifact(file("org.springframework.beans_${version}/target/org.springframework.beans-${version}.jar"))
+        }
+        context(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.context'
+            revision "${version}"
+            artifact(file("org.springframework.context_${version}/target/org.springframework.context-${version}.jar"))
+        }
+        contextSupport(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.context.support'
+            revision "${version}"
+            artifact(file("org.springframework.context.support_${version}/target/org.springframework.context.support-${version}.jar"))
+        }
+        core(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.core'
+            revision "${version}"
+            artifact(file("org.springframework.core_${version}/target/org.springframework.core-${version}.jar"))
+        }
+        expression(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.expression'
+            revision "${version}"
+            artifact(file("org.springframework.expression_${version}/target/org.springframework.expression-${version}.jar"))
+        }
+        jdbc(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.jdbc'
+            revision "${version}"
+            artifact(file("org.springframework.jdbc_${version}/target/org.springframework.jdbc-${version}.jar"))
+        }
+        jms(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.jms'
+            revision "${version}"
+            artifact(file("org.springframework.jms_${version}/target/org.springframework.jms-${version}.jar"))
+        }
+        messaging(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.messaging'
+            revision "${version}"
+            artifact(file("org.springframework.messaging_${version}/target/org.springframework.messaging-${version}.jar"))
+        }
+        orm(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.orm'
+            revision "${version}"
+            artifact(file("org.springframework.orm_${version}/target/org.springframework.orm-${version}.jar"))
+        }
+        oxm(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.oxm'
+            revision "${version}"
+            artifact(file("org.springframework.oxm_${version}/target/org.springframework.oxm-${version}.jar"))
+        }
+        test(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.test'
+            revision "${version}"
+            artifact(file("org.springframework.test_${version}/target/org.springframework.test-${version}.jar"))
+        }
+        transaction(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.transaction'
+            revision "${version}"
+            artifact(file("org.springframework.transaction_${version}/target/org.springframework.transaction-${version}.jar"))
+        }
+        web(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.web'
+            revision "${version}"
+            artifact(file("org.springframework.web_${version}/target/org.springframework.web-${version}.jar"))
+        }
+        webmvc(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.webmvc'
+            revision "${version}"
+            artifact(file("org.springframework.webmvc_${version}/target/org.springframework.webmvc-${version}.jar"))
+        }
+        webmvcPortlet(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.webmvc.portlet'
+            revision "${version}"
+            artifact(file("org.springframework.webmvc.portlet_${version}/target/org.springframework.webmvc.portlet-${version}.jar"))
+        }
+        websocket(IvyPublication) {
+            organisation 'org.eclipse.virgo.mirrored'
+            module 'org.springframework.websocket'
+            revision "${version}"
+            artifact(file("org.springframework.websocket_${version}/target/org.springframework.websocket-${version}.jar"))
+        }
+    }
+
+    repositories {
+        ivy { url "$buildDir" }
+    }
+}

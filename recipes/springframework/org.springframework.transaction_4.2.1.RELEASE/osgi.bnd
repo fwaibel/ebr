@@ -1,0 +1,33 @@
+package-version=${version;===;${Bundle-Version}}
+aopalliance-version=${version;===;1.0}
+uow-version=${version;===;6.0.2.17}
+ejb-api-version=${version;===;3.0}
+connector-api-version=${version;===;1.5}
+javax.transaction-api-version=${version;===;1.2}
+spring-aop-version=${version;===;4.2.1.RELEASE}
+spring-beans-version=${version;===;4.2.1.RELEASE}
+spring-context-version=${version;===;4.2.1.RELEASE}
+spring-core-version=${version;===;4.2.1.RELEASE}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *;version="${package-version}"
+
+Import-Package: \
+ javax.ejb.*;version=${ejb-api-version};resolution:="optional", \
+ javax.resource.*;resolution:="optional", \
+ javax.transaction.*;version=${javax.transaction-api-version};resolution:="optional", \
+ com.ibm.wsspi.uow.*;version=${uow-version};resolution:="optional", \
+ org.aopalliance.*;version=${aopalliance-version};resolution:="optional", \
+ org.springframework.aop.*;version=${spring-aop-version};resolution:="optional", \
+ org.springframework.beans.*;version=${spring-beans-version}, \
+ org.springframework.context.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.core.*;version=${spring-core-version}, \
+ org.springframework.jndi.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.scheduling.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.stereotype.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.util.*;version=${spring-core-version}, \
+ javax.management;version="0";resolution:="optional", \
+ javax.naming;version="0";resolution:="optional", \
+ org.w3c.dom;version="0";resolution:="optional", \
+ *

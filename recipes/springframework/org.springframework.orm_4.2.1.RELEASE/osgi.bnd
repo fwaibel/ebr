@@ -1,0 +1,48 @@
+package-version=${version;===;${Bundle-Version}}
+aopalliance-version=${version;===;1.0}
+jdo-api-version=${version;===;3.1}
+javax.servlet-api-version=${version;===;3.0.1}
+openjpa-version=${version;===;2.4.0}
+javax.persistence-version=${version;===;2.0.5}
+org.eclipse.persistence.core-version=${version;===;2.4.2}
+org.eclipse.persistence.jpa-version=${version;===;2.4.2}
+hibernate-core-version=${version;===;3.6.10.Final}
+hibernate-entitymanager-version=${version;===;5.0.0.Final}
+spring-aop-version=${version;===;4.2.1.RELEASE}
+spring-beans-version=${version;===;4.2.1.RELEASE}
+spring-context-version=${version;===;4.2.1.RELEASE}
+spring-core-version=${version;===;4.2.1.RELEASE}
+spring-jdbc-version=${version;===;4.2.1.RELEASE}
+spring-tx-version=${version;===;4.2.1.RELEASE}
+spring-web-version=${version;===;4.2.1.RELEASE}
+
+Export-Package: \
+ !about.html,!about_files, \
+ *;version="${package-version}"
+
+Import-Package: \
+ javax.jdo.*;version=${jdo-api-version};resolution:="optional", \
+ javax.persistence.*;version=${javax.persistence-version};resolution:="optional", \
+ javax.servlet.*;version=${javax.servlet-api-version};resolution:="optional", \
+ javax.transaction;version=${javax.persistence-version};resolution:="optional", \
+ org.aopalliance.*;version=${aopalliance-version};resolution:="optional", \
+ org.apache.openjpa.*;version=${openjpa-version};resolution:="optional", \
+ org.eclipse.persistence.*;version=${org.eclipse.persistence.core-version};resolution:="optional", \
+ org.hibernate.*;version=${hibernate-core-version};resolution:="optional", \
+ org.springframework.aop.*;version=${spring-aop-version};resolution:="optional", \
+ org.springframework.beans.*;version=${spring-beans-version}, \
+ org.springframework.context.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.core.*;version=${spring-core-version}, \
+ org.springframework.dao.*;version=${spring-tx-version}, \
+ org.springframework.jndi.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.instrument.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.jdbc.*;version=${spring-jdbc-version}, \
+ org.springframework.ui.*;version=${spring-context-version};resolution:="optional", \
+ org.springframework.web.*;version=${spring-web-version};resolution:="optional", \
+ org.springframework.transaction.*;version=${spring-tx-version}, \
+ org.springframework.util.*;version=${spring-core-version}, \
+ javax.sql;version="0";resolution:="optional", \
+ javax.xml.parsers;version="0";resolution:="optional", \
+ org.w3c.dom;version="0";resolution:="optional", \
+ org.xml.sax;version="0";resolution:="optional", \
+ *
