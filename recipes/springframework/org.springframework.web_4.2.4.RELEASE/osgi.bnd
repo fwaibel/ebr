@@ -58,7 +58,7 @@ Import-Package: \
  org.aopalliance.*;version=${aopalliance-version};resolution:="optional", \
  org.apache.commons.fileupload.*;version=${commons-fileupload-version};resolution:="optional", \
  org.apache.log4j.*;version=${log4j-version};resolution:="optional", \
- org.apache.http.*;version=${httpclient-version};resolution:="optional", \
+ org.apache.http.*;version="[4.4.4, 5.0.0)";resolution:="optional", \
  org.springframework.aop.*;version=${spring-aop-version}, \
  org.springframework.beans.*;version=${spring-beans-version}, \
  org.springframework.context.*;version=${spring-context-version}, \
